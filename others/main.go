@@ -9,5 +9,6 @@ type S struct {
 }
 
 func main() {
+
 	fmt.Println(datatype.TreeNode{})
 }
