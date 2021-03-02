@@ -1,9 +1,12 @@
 package main
 
-import "strings"
+import (
+	"algorithm/tool"
+	"strings"
+)
 
 func init() {
-	run(convert, "AB", 1)
+	tool.Run(convert, "AB", 1)
 }
 
 func convert(s string, numRows int) string {
@@ -14,10 +17,10 @@ func convert(s string, numRows int) string {
 	}
 	var sb strings.Builder
 	for rowIdx := 0; rowIdx < numRows; rowIdx++ {
-		secInRow := rowIdx > 0 && rowIdx < numRows-1
+		hasTwo := rowIdx > 0 && rowIdx < numRows-1
 		for idx, col := rowIdx, roundLen; idx < l; idx += roundLen {
 			sb.WriteByte(s[idx])
-			if secInRow {
+			if hasTwo {
 				ri := col - idx + (col - roundLen)
 				if ri < l {
 					sb.WriteByte(s[ri])
