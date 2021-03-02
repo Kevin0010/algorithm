@@ -1,10 +1,13 @@
 package main
 
 import (
-	"algorithm/datatype"
-	"fmt"
+	"algorithm/tool"
+)
+
+var (
+	run        = tool.Run
+	runAndPick = tool.RunAndPick
 )
 
 func main() {
-	fmt.Println(datatype.TreeNode{})
 }

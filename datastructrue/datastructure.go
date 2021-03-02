@@ -1,4 +1,4 @@
-package datatype
+package datastructrue
 
 type ListNode struct {
 	Val  int
