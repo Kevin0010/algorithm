@@ -9,6 +9,7 @@ func init() {
 	tool.Run(convert, "AB", 1)
 }
 
+// 规律：此种排列形成多个子段，每段的元素数量是一定的
 func convert(s string, numRows int) string {
 	l := len(s)
 	roundLen := numRows + numRows - 2
