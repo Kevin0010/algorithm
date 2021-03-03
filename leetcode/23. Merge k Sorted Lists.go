@@ -1,8 +1,23 @@
 package main
 
+import "algorithm/tool"
+
+func init() {
+	tool.Run(mergeKLists, []*ListNode{
+		{1, &ListNode{3, &ListNode{Val: 5}}},
+		{2, &ListNode{2, &ListNode{Val: 4}}},
+	})
+}
+
+// 假设每个链表上有n个元素
+// 如果每次循环仅合并一个，则比较的时间复杂度为O(nk^2)
+// 如果两两合并则比较的时间复杂度为O(nklgk)
 func mergeKLists(lists []*ListNode) *ListNode {
-	for len(lists) > 1 {
-		l := len(lists)
+	l := len(lists)
+	if l == 0 {
+		return nil
+	}
+	for l > 1 {
 		for i := 0; i < l; i += 2 {
 			if i+1 < l {
 				lists[i/2] = mergeTwo(lists[i], lists[i+1])
@@ -10,7 +25,8 @@ func mergeKLists(lists []*ListNode) *ListNode {
 				lists[i/2] = lists[i]
 			}
 		}
-		lists = lists[:(l+1)/2]
+		l = (l + 1) / 2
+		lists = lists[:l]
 	}
 	return lists[0]
 }
