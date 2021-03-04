@@ -12,6 +12,7 @@ func init() {
 // 假设每个链表上有n个元素
 // 如果每次循环仅合并一个，则比较的时间复杂度为O(nk^2)
 // 如果两两合并则比较的时间复杂度为O(nklgk)
+// 此种写法的额外空间复杂度为O(1)
 func mergeKLists(lists []*ListNode) *ListNode {
 	l := len(lists)
 	if l == 0 {
