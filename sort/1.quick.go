@@ -5,8 +5,8 @@ import (
 )
 
 func init() {
-	args := []int{3, 1, 2, 4, 5}
-	tool.RunAndPick(&args, quick, args, 0, len(args))
+	args := []int{3, 2}
+	tool.RunAndPrintSpec(&args, quick, args, 0, len(args))
 }
 
 // 左闭右开

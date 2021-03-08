@@ -22,7 +22,7 @@ func Run(fn interface{}, args ...interface{}) {
 	os.Exit(0)
 }
 
-func RunAndPick(p interface{}, fn interface{}, args ...interface{}) {
+func RunAndPrintSpec(p interface{}, fn interface{}, args ...interface{}) {
 	_, file, _, _ := runtime.Caller(1)
 	fileNameIdx := strings.LastIndex(file, "/") + 1
 	dotIdx := strings.Index(file, ".")
